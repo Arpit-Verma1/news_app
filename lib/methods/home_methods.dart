@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 import '../models/news_article_model.dart';
@@ -18,8 +17,8 @@ class NewsService {
   final String _baseUrl = 'https://newsapi.org/v2';
 
   Future<List<NewsArticle>> fetchNews() async {
-    final String? apiKey = dotenv.env['NEWS_API_KEY'];
-
+    // final String? apiKey = dotenv.env['NEWS_API_KEY'];
+    final String? apiKey = 'c0af13619b144406af39f766f6467ce6';
     if (apiKey == null || apiKey.isEmpty) {
       throw Exception('API Key is missing. Please check your .env file.');
     }
